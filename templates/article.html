@@ -125,16 +125,17 @@
 {% endblock header %}
 
 {% block content %}
-    <!-- Post Content -->
-    <article>
-        {{ article.content }}
-    </article>
 
     {% if article.tags %}
         <div class="tags">
             <p>tags: {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a>, {% endfor %}</p>
         </div>
     {% endif %}
+
+    <!-- Post Content -->
+    <article>
+        {{ article.content }}
+    </article>
 
     {% include 'sharing.html' %}
     <hr>
